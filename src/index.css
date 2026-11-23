@@ -50,6 +50,14 @@
   }
 }
 
+:root {
+  color-scheme: light;
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+}
+
 body {
   margin: 0;
 }
@@ -77,20 +85,24 @@ h1 {
   font-size: 56px;
   letter-spacing: -1.68px;
   margin: 32px 0;
+
   @media (max-width: 1024px) {
     font-size: 36px;
     margin: 20px 0;
   }
 }
+
 h2 {
   font-size: 24px;
   line-height: 118%;
   letter-spacing: -0.24px;
   margin: 0 0 8px;
+
   @media (max-width: 1024px) {
     font-size: 20px;
   }
 }
+
 p {
   margin: 0;
 }
@@ -108,4 +120,131 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+.feature-icon {
+  width: 42px;
+  height: 42px;
+  display: block;
+  color: #fff;
+}
+
+.feature-icon-circle {
+  width: 74px;
+  height: 74px;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-icon-circle-blue {
+  background-color: #1473ea;
+}
+
+.feature-icon-circle-green {
+  background-color: #198754;
+}
+
+.feature-icon-circle-yellow {
+  background-color: #f5b800;
+}
+
+.features-section,
+.properties-section {
+  color: #374151;
+}
+
+.features-section h2,
+.properties-section h2 {
+  color: #1f2937;
+  font-family: var(--heading);
+  font-weight: 700;
+}
+
+.features-section .card {
+  border-radius: 10px;
+  min-height: 205px;
+}
+
+.features-section .card-title {
+  color: #111827;
+}
+
+.account-page,
+.contact-page,
+.profile-page {
+  min-height: 70vh;
+}
+
+.form-card {
+  max-width: 520px;
+  border-radius: 16px;
+}
+
+.page-icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.page-title,
+.profile-page h1,
+.contact-page h1 {
+  color: #1f2937;
+}
+
+.contact-intro,
+.profile-header {
+  background: linear-gradient(135deg, #0d6efd, #1646a0);
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+.contact-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 18px;
+}
+
+.contact-detail span {
+  opacity: 0.85;
+}
+
+.avatar {
+  width: 82px;
+  height: 82px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.profile-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.profile-row:last-child {
+  border-bottom: 0;
+}
+
+@media (max-width: 576px) {
+  .profile-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
 }

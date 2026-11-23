@@ -1,18 +1,19 @@
-import React from 'react'
-
+import { Routes, Route, NavLink } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import Profile from './pages/Profile/Profile'
 import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
-import { NavLink, Route, Routes } from 'react-router-dom'
+import Contact from './pages/Contact/Contact'
+
 function App() {
     return (
         <>
-            {/* KOMPONEN NAVBAR */}
-
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            {/* 1. Navbar Bootstrap 5 */}
+            <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
                 <div className="container-fluid">
-                    <NavLink className="navbar-brand" to="/">Griya MDP</NavLink>
+                    <NavLink className="navbar-brand fw-bold text-primary" to="/">
+                        <i className="bi bi-house-heart-fill me-2"></i>Griya MDP
+                    </NavLink>
                     <button
                         className="navbar-toggler"
                         type="button"
@@ -28,7 +29,7 @@ function App() {
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
                                 <NavLink
-                                    className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                                    className={({ isActive }) => `nav-link ${isActive ? 'active fw-bold text-primary' : ''}`}
                                     to="/"
                                     end
                                 >
@@ -37,7 +38,7 @@ function App() {
                             </li>
                             <li className="nav-item">
                                 <NavLink
-                                    className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                                    className={({ isActive }) => `nav-link ${isActive ? 'active fw-bold text-primary' : ''}`}
                                     to="/profile"
                                 >
                                     Profile
@@ -45,7 +46,7 @@ function App() {
                             </li>
                             <li className="nav-item">
                                 <NavLink
-                                    className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                                    className={({ isActive }) => `nav-link ${isActive ? 'active fw-bold text-primary' : ''}`}
                                     to="/login"
                                 >
                                     Login
@@ -53,7 +54,7 @@ function App() {
                             </li>
                             <li className="nav-item">
                                 <NavLink
-                                    className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                                    className={({ isActive }) => `nav-link ${isActive ? 'active fw-bold text-primary' : ''}`}
                                     to="/register"
                                 >
                                     Register
@@ -61,7 +62,7 @@ function App() {
                             </li>
                             <li className="nav-item">
                                 <NavLink
-                                    className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                                    className={({ isActive }) => `nav-link ${isActive ? 'active fw-bold text-primary' : ''}`}
                                     to="/contact"
                                 >
                                     Contact
@@ -71,18 +72,17 @@ function App() {
                     </div>
                 </div>
             </nav>
-            {/* ROUTER OUTLET*/}
-            <div>
-                <Routes>
-                    <Route path='/' element={<Home />} />
-                    <Route path='/profile' element={<Profile />} />
-                    <Route path='/login' element={<Login />} />
-                    <Route path='/register' element={<Register />} />
-                    <Route path='/contact' element={<contact />} />
 
+            {/* 2. Router Outlet (Routes) */}
+            <div className="container-fluid py-3">
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/register" element={<Register />} />
+                    <Route path="/contact" element={<Contact />} />
                 </Routes>
             </div>
-
         </>
     )
 }
